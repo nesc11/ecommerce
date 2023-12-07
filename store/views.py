@@ -13,7 +13,7 @@ def product_list(request, category_slug=None):
     return render(
         request,
         "store/product_list.html",
-        {"category": category, categories: categories, products: products},
+        {"category": category, "categories": categories, "products": products},
     )
 
 
