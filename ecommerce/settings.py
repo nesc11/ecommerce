@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My Apss
     "store.apps.StoreConfig",
+    "cart.apps.CartConfig",
     # Built-in
     "django.contrib.admin",
     "django.contrib.auth",
