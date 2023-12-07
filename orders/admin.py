@@ -7,7 +7,7 @@ class OrderItemInline(admin.TabularInline):
     raw_id_fields = ["product"]
 
 
-@admin.site.register(Order)
+@admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_display = [
         "id",
