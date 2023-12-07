@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # My Apss
     "store.apps.StoreConfig",
     "cart.apps.CartConfig",
+    "orders.apps.OrdersConfig",
     # Built-in
     "django.contrib.admin",
     "django.contrib.auth",
