@@ -35,22 +35,4 @@ def cart_remove(request, product_id):
 
 
 def cart_detail(request):
-    cart = request.session.get("cart", {})
-    print(cart)
-    products = Product.objects.filter(id__in=cart.keys())
-    total_price = 0
-    for product in products:
-        str_product_id = str(product.id)
-        cart[str_product_id]["product"] = product
-        cart[str_product_id]["price"] = Decimal(cart[str_product_id]["price"])
-        cart[str_product_id]["total_price"] = (
-            cart[str_product_id]["price"] * cart[str_product_id]["quantity"]
-        )
-        cart[str_product_id]["update_quantity_form"] = CartAddProductForm(
-            initial={"quantity": cart[str_product_id]["quantity"], "override": True}
-        )
-        total_price += cart[str_product_id]["total_price"]
-    print(cart)
-    return render(
-        request, "cart/cart_detail.html", {"cart": cart, "total_price": total_price}
-    )
+    return render(request, "cart/cart_detail.html")
