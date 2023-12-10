@@ -22,5 +22,5 @@ def order_create(request):
                     quantity=item["quantity"],
                 )
             del request.session["cart"]
-        return render(request, "orders/order_created.html")
+        return render(request, "orders/order_created.html", {"order": order})
     return render(request, "orders/order_create.html", {"form": form})
